@@ -1,16 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 .mint-header {
 	background-color: #2aac5e;
 	line-height: 40px;
 	font-size: 20px;
 }
 
-.mint-navbar {
-	margin-top: 40px;
+a {
+	text-decoration: none;
 }
 
-.mint-tab-item-label a {
-	font-size: 18px;
-	color: #0f6;
-	text-decoration: none;
-	
+.main {
+	margin-top: 40px;
+	margin-bottom: 50px;
 }

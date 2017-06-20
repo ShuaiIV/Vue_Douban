@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 导入vue-resource组件并使用
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 // 导入mint-ui 并在全局使用
 import Mint from 'mint-ui'
 Vue.use(Mint)

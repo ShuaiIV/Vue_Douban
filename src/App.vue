@@ -3,22 +3,27 @@
 		<!--顶部标题栏-->
 		<mt-header fixed title="豆瓣APP"></mt-header>
 	
-		<!--电影、图书、音乐选项卡-->
-		<mt-navbar>
-			<mt-tab-item :class="{selected: isMovies}" id="1">
-				<router-link to="/movies">电影</router-link>
-			</mt-tab-item>
-			<mt-tab-item :class="{selected: isBooks}" id="2">
-				<router-link to="/books">图书</router-link>
-			</mt-tab-item>
-			<mt-tab-item :class="{selected: isMusics}" id="3">
-				<router-link to="/musics">音乐</router-link>
-			</mt-tab-item>
-		</mt-navbar>
-	
 		<!--中间路由展示区域-->
 		<router-view></router-view>
 	
+		<!--底部TabBar 电影、图书、音乐选项卡-->
+		<div class="tabbar">
+			<router-link to="/movies">
+				<div class="tabbar-item" :class="{selected: isMovies}">
+					电影
+				</div>
+			</router-link>
+			<router-link to="/books">
+				<div class="tabbar-item" :class="{selected: isBooks}">
+					图书
+				</div>
+			</router-link>
+			<router-link to="/musics">
+				<div class="tabbar-item" :class="{selected: isMusics}">
+					音乐
+				</div>
+			</router-link>
+		</div>
 	</div>
 </template>
 
@@ -77,17 +82,37 @@ export default {
 </script>
 
 <style scoped>
+.tabbar {
+	width: 100%;
+	height: 50px;
+	background-color: #0094ff;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+}
+
+.tabbar a {
+	width: 30%;
+	height: 100%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	flex-grow: 1;
+}
+
+
 .selected {
 	position: relative;
+	color: red;
 }
+
 .selected::after {
 	content: '';
 	position: absolute;
-	width: 120px;
+	width: 100%;
 	height: 2px;
-	background-color: #06f;
-	bottom: 5px;
+	background-color: red;
+	top: 0;
 	left: 0;
-
 }
 </style>
