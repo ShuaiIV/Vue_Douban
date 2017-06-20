@@ -4,6 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 导入mint-ui 并在全局使用
+import Mint from 'mint-ui'
+Vue.use(Mint)
+// 导入mint-ui的CSS文件
+import 'mint-ui/lib/style.min.css'
+
+// 导入自己的CSS样式
+import '../static/css/style.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

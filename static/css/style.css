@@ -1,0 +1,16 @@
+.mint-header {
+	background-color: #2aac5e;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+.mint-navbar {
+	margin-top: 40px;
+}
+
+.mint-tab-item-label a {
+	font-size: 18px;
+	color: #0f6;
+	text-decoration: none;
+	
+}
