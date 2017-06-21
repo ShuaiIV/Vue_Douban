@@ -23,9 +23,6 @@ export default {
 			urlLink: 'v2/movie/in_theaters',
 		}
 	},
-	created() {
-
-	},
 	methods: {
 		// 改变请求地址
 		changeUrl() {
