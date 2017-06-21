@@ -4,7 +4,6 @@
 			<mt-tab-item id="1">正在热映</mt-tab-item>
 			<mt-tab-item id="2">即将上映</mt-tab-item>
 			<mt-tab-item id="3">Top250</mt-tab-item>
-			<!--<mt-tab-item id="4">口碑榜</mt-tab-item>-->
 		</mt-navbar>
 	
 		<!-- tab-container -->
@@ -40,9 +39,6 @@ export default {
 				case "3":
 					this.urlLink = 'v2/movie/top250'
 					break;
-				// case "1":
-				// 	this.urlLink = 'v2/movie/in_theaters'
-				// 	break;
 				default:
 					break;
 			}

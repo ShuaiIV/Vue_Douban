@@ -1,14 +1,16 @@
 <template>
-	<div class="tab-container" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10" id="in_theaters">
-		<div v-for="item in moviesList" :key="item.id" class="movie-item">
-			<router-link :to="'/movies/moviedetail/' + item.id">
-				<img v-lazy="item.images.large" />
-				<p>{{item.title}}</p>
-				<span>评分: {{item.rating.average}}分</span>
-				<span>{{item.genres.join('、')}}</span>
-			</router-link>
-		</div>
+	<div v-if="isLoading">
+		<div class="tab-container" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10" id="in_theaters">
+			<div v-for="item in moviesList" :key="item.id" class="movie-item">
+				<router-link :to="'/movies/moviedetail/' + item.id">
+					<img v-lazy="item.images.large" />
+					<p>{{item.title}}</p>
+					<span>评分: {{item.rating.average}}分</span>
+					<span>{{item.genres.join('、')}}</span>
+				</router-link>
+			</div>
 	
+		</div>
 		<!--显示没有更多数据-->
 		<span v-if="start >= total" class="noMore">----没有更多内容啦----</span>
 	</div>
@@ -27,7 +29,8 @@ export default {
 			moviesList: [],
 			start: 0,
 			total: 0,
-			allLoaded: false
+			allLoaded: false,
+			isLoading: false
 		}
 	},
 	created() {
@@ -41,7 +44,6 @@ export default {
 				text: '加载中...',
 				spinnerType: 'fading-circle'
 			});
-			console.log(this.selected);
 			// 拼接请求地址URL
 			const url = common.apihost + this.URL + '?count=10&start=' + start;
 
@@ -52,10 +54,11 @@ export default {
 				if (this.start == 0) {
 					this.moviesList = res.body.subjects;
 				} else {
-				this.moviesList = this.moviesList.concat(res.body.subjects);
+					this.moviesList = this.moviesList.concat(res.body.subjects);
 				}
 				// 关闭加载动画
 				Indicator.close();
+				this.isLoading = true;
 			}, err => { });
 		},
 		loadMore() {
@@ -68,7 +71,7 @@ export default {
 				return false;
 			}
 			this.getMovieInTheaters(this.start);
-			console.log(this.start, this.total)
+			// console.log(this.start, this.total)
 		}
 	},
 	watch: {
@@ -153,10 +156,9 @@ image[lazy=loading] {
 
 .noMore {
 	display: block;
-	width: 152px;
 	text-align: center;
-	margin: 10px auto;
 	font-size: 14px;
 	color: #aaa;
+	padding: 10px;
 }
 </style>
