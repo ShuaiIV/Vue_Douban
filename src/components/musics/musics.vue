@@ -57,7 +57,5 @@ export default {
 </script>
 
 <style scoped>
-.nav-bar {
-	top: 40px;
-}
+
 </style>
