@@ -18,3 +18,14 @@ a {
 	margin-bottom: 50px;
 	width: 100%;
 }
+
+.mint-search {
+	height: 52px;
+	position: fixed;
+	width: 100%;
+	top: 40px;
+}
+
+.mint-search input {
+	font-size: 15px;
+}

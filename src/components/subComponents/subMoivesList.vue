@@ -135,7 +135,7 @@ image[lazy=loading] {
 .movie-item span {
 	display: block;
 	width: 50%;
-	font-size: 4px;
+	font-size: 12px;
 	padding-top: 3px;
 	line-height: 12px;
 	white-space: nowrap;

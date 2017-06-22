@@ -48,7 +48,7 @@ export default {
 
 			// 发送Ajax请求
 			this.$http.jsonp(url).then(res => {
-				console.log(res);
+				// console.log(res);
 				this.total = res.body.total;
 				if (this.start == 0) {
 					this.booksList = res.body.books;
@@ -133,7 +133,7 @@ image[lazy=loading] {
 
 .book-item span {
 	display:block;
-	font-size: 4px;
+	font-size: 12px;
 	padding-top: 3px;
 	line-height: 12px;
 	color: #666;

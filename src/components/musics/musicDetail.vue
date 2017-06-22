@@ -64,12 +64,11 @@ export default {
 
 			// 发送Ajax请求
 			this.$http.jsonp(url).then(res => {
-				console.log(res.body);
+				// console.log(res.body);
 				this.musicDetail = res.body;
 				// 关闭加载动画
 				Indicator.close();
 				this.loading = true;
-				console.log(this.musicDetail.translator)
 			}, err => { })
 		}
 	}

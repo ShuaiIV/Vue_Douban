@@ -13,8 +13,11 @@ import bookDetail from '../components/books/bookDetail.vue'
 
 // 导入音乐相关路由
 import musics from '../components/musics/musics.vue'
-// 导入电影详情页的路由
+// 导入音乐详情页的路由
 import musicDetail from '../components/musics/musicDetail.vue'
+
+// 导入搜索页面路由
+import search from '../components/search/search.vue'
 
 Vue.use(Router)
 
@@ -26,6 +29,7 @@ export default new Router({
 		{ path: '/books', component: books },
 		{ path: '/books/bookdetail/:bookId', component: bookDetail },
 		{ path: '/musics', component: musics },
-		{ path: '/musics/musicdetail/:musicId', component: musicDetail }
+		{ path: '/musics/musicdetail/:musicId', component: musicDetail },
+		{ path: '/search', component: search }
 	]
 })
