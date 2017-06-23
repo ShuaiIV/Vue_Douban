@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div>
 		<!--顶部标题栏-->
 		<mt-header fixed title="豆瓣APP"></mt-header>
 		<!--全局返回按钮-->
